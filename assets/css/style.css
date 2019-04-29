@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow: hidden;
+  outline: none;
+
+  /* No touch action */
+  -ms-touch-action: none;
+  touch-action: none;
+
+  background: #333333;
+}
+
+#game {
+  background: rgba(141, 210, 241, 0);
+  /* No touch action */
+  /* touch-action-delay: none; */
+  touch-action: none;
+  -ms-touch-action: none;
+
+  /* No user select */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: #000;
+
+  /* display: block;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); */
+}

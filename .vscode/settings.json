@@ -1,0 +1,42 @@
+{
+  "files.exclude": {
+    "**/.git": true, // this is a default value
+    "**/.DS_Store": true, // this is a default value
+    "**/node_modules": true, // this excludes all folders
+    // named "node_modules" from
+    // the explore tree
+    // alternative version
+    ".cache": true,
+    "node_modules": true, // this excludes the folder
+    // only from the root of
+    // your workspace
+    "package-lock.json": true,
+    "yarn.lock": true,
+    "definitions": true,
+    "typings": false,
+    "dist": true,
+    ".vscode": false
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "typescript",
+      "autoFix": true
+    }
+  ],
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}

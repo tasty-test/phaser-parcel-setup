@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "allowUnreachableCode": false,
+    "typeRoots": ["node_modules/@types", "typings"],
+    "lib": ["dom", "es5", "esnext", "scripthost"]
+  }
+}
