@@ -2,7 +2,7 @@ import loadAssets from "../utils/loadAssets";
 
 export default class Preloader extends Phaser.Scene {
   private readonly BAR_HEIGHT: number = 10;
-  private bar: any; // eslint-disable-line 
+  private bar!: Phaser.GameObjects.Graphics;
 
   private constructor() {
     super({
@@ -23,7 +23,7 @@ export default class Preloader extends Phaser.Scene {
       x: this.centerX() - this.centerX(),
       y: this.centerY(),
     });
-    this.bar.fillStyle(0xaeaeae, 1).fillRect(0, -(this.BAR_HEIGHT / 2), width, this.BAR_HEIGHT);
+    this.bar.fillStyle(0xaeaeae, 1).fillRect(0, -(this.BAR_HEIGHT / 2), +width, this.BAR_HEIGHT);
 
     this.load.on("progress", this.updateProgressDisplay, this);
   }
@@ -37,17 +37,18 @@ export default class Preloader extends Phaser.Scene {
       duration: 200,
       ease: "EaseQuadOut",
       onComplete(): void {
+        // @ts-ignore
         this.scene.switch("Main");
       },
       callbackScope: this,
-    } as any); // eslint-disable-line 
+    } as Phaser.Tweens.TweenConfigDefaults);
   }
 
   private updateProgressDisplay(pct: number): void {
     this.bar
       .clear()
       .fillStyle(0x50576b, 1)
-      .fillRect(0, -(this.BAR_HEIGHT / 2), this.game.config.width, this.BAR_HEIGHT)
+      .fillRect(0, -(this.BAR_HEIGHT / 2), +this.game.config.width, this.BAR_HEIGHT)
       .fillStyle(0xffffff, 1)
       .fillRect(
         0,
